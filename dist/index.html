@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
+    <link rel="stylesheet" href="/css/main.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ad86c022-34cc-43d6-bb40-3818c43eeb4a&lang=ru_RU"></script>
+    <script>
+
+        function init() {
+
+            let center = [44.72250257458077,37.77512799999991];
+
+            function init() {
+                let map = new ymaps.Map('map', {
+                    center: center,
+                    zoom: 16
+                });
+
+                let placemark = new ymaps.Placemark(center,{},{
+                    iconLayout: 'default#image',
+                    iconImageHref: '/images/src/pin.png',
+                    iconImageSize: [40, 40],
+                    iconImageOffset: [-22, -40]
+                })
+
+                map.controls.remove('geolocationControl'); // удаляем геолокацию
+                map.controls.remove('searchControl'); // удаляем поиск
+                map.controls.remove('trafficControl'); // удаляем контроль трафика
+                map.controls.remove('typeSelector'); // удаляем тип
+                map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+                // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+                map.controls.remove('rulerControl'); // удаляем контрол правил
+                map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+                map.geoObjects.add(placemark)
+            }
+
+            ymaps.ready(init);
+            
+        }
+    </script>
+
+    <style>
+        #map{
+            width: 100%;
+            height: 900px;
+        }
+
+        @media (max-width: 960px) {
+            #map{
+            width: 100%;
+            height: 600px;
+        }
+        }
+        @media (max-width: 530px) {
+            #map{
+            width: 100%;
+            height: 400px;
+        }
+        }
+    </style>
+
+    <title>Krepost</title>
+</head>
+<body data-barba="wrapper" onload="init();">
+
+<main data-barba="container" data-barba-namespace="home">
+
+<div class="loader">
+
+    <div class="loader__title"><img class="title-img" src="/images/Title-krepost.svg" alt="Title svg"></div>
+
+</div>
+
+<section class="mobile-nav">
+
+    <div class="container">
+
+        <div class="header-wrapper">
+
+            <div class="logo">
+
+                <img class="logo-bg" src="/images/Oktagon.svg" alt="logo Krepost">
+
+            </div>
+
+            <nav class="header-nav">
+
+                <ul class="ul-nav">
+
+                    <li class="header-nav-mobile" id="menu-del">Закрыть</li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <div class="title">
+
+        <div class="container">
+
+            <img class="title-img" src="/images/Title-krepost.svg" alt="Title svg">
+
+        </div>
+
+    </div>
+
+    <nav class="nav-mobile">
+
+        <ul class="ul-nav">
+
+            <li><a class="header-nav-a" href="items.html">Недвижимости</a></li>
+
+        </ul>
+
+    </nav>
+
+    </div>
+
+</section>
+    
+<header class="header" id="header">
+
+    <div class="container">
+
+        <div class="header-wrapper">
+
+            <div class="logo">
+
+                <img class="logo-bg" id="logo" src="/images/Oktagon.svg" alt="logo Krepost">
+
+            </div>
+
+            <nav class="header-nav" id="header-nav">
+
+                <ul class="ul-nav">
+
+                    <li><a class="header-nav-a" href="#about">О нас</a></li>
+                    <li><a class="header-nav-a" href="#contact">Контакт</a></li>
+                    <li><a class="header-nav-a" href="items.html">Недвижимости</a></li>
+                    <li><a class="header-nav-a" href="#partners">Партёры</a></li>
+
+                    <li class="header-nav-mobile" id="menu">Меню</li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="title">
+
+    <div class="container">
+
+        <img class="title-img" src="/images/Title-krepost.svg" alt="Title svg">
+
+    </div>
+
+</div>
+
+<section class="about notch">
+
+    <div class="container">
+
+        <div class="about-text">
+
+            <div class="about__text-one">
+
+                <h3 class="about__text-one-title">Компания Крепость поможет вам купить, продать, сдать, арендовать.</h3>
+
+            </div>
+
+            <div class="about__text-two">
+
+                <h2 class="about__text-two-subtitle">С нами большие возможности.</h2>
+
+            </div>
+
+        </div>
+
+        <div class="about-images">
+
+            <div class="about__images-one">
+
+                <img class="about__images-one-img" src="/images/photo-about.webp" alt="Images one">
+         
+            </div>
+
+            <div class="about__images-two">
+
+                <img class="about__images-two-img notch" src="/images/photo-demo.webp" alt="Images two">
+
+            </div>
+
+        </div>
+
+        <div class="text-title">
+
+            <h1 class="text__title">
+
+                Крепость - это компания которая ассоциируется с комфортом и надежностью. Работая с нами вы покупаете, арендуете, сдаете или продаёте не просто недвижимость, дом, землю - вы получаете удобство и надежность.
+
+            </h1>
+
+        </div>
+
+        <div class="about-main">
+
+            <div class="about-main-image notch">
+
+                <img class="about-main-image-img" src="/images/photo-demo-2.webp" alt="about image">
+
+            </div>
+
+            <div class="about-main-text" id="about">
+
+                <div class="about-main-text-block">
+
+                    <h2 class="about-main-text-title">О нас</h2>
+
+                    <h3 class="about-main-text-subtitle">От волнения к умиротворению. От уродливового к совершенству. С компанией Крепость.</h3>
+
+                </div>
+
+                <div class="about-main-text-paragraph">
+
+                    <p>20 лет работы с клиентами и 99% довольны нашей работой. Наши клиенты получают превосходную работу. Мы продаём вам более, чем дома или недвижимость, мы продаём вам комфорт и спокойствие.</p>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in repudiandae soluta placeat nulla cumque dolor, ut similique ullam possimus. Minima amet consequatur facere ea voluptates debitis atque doloribus dolore. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere amet mollitia id maxime minus consequatur? Repudiandae sunt praesentium quia ducimus deserunt nulla molestiae delectus iure impedit, magni obcaecati natus in.</p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, aut quasi officiis neque, tempora saepe hic molestiae, asperiores consequatur incidunt reprehenderit. Dicta deleniti placeat expedita quos ducimus laboriosam recusandae eligendi.</p>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="about-bottom">
+
+            <div class="about-bottom-text">
+
+                <h3 class="about-bottom-text-title">Контакты</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact notch" id="contact">
+    
+    <div class="container">
+
+        <div class="contact-forms notch">
+
+            <div class="contact-form">
+
+                <input class="contact-form-input" type="text" placeholder="Ваше имя...">
+                <input class="contact-form-input" type="email" placeholder="Ваш email...">
+                <input class="contact-form-input" type="text" placeholder="Ваш номер телефона...">
+
+                <div class="contact-form-if">
+
+                    <div class="contact-form-if-text">
+
+                        <div>
+                            <!-- Toggle Button Style 1 -->
+                            <label class="toggler-wrapper style-1">
+                            <input type="checkbox" >
+                            <div class="toggler-slider">
+                                <div class="toggler-knob"></div>
+                            </div>
+                            </label>
+                            <!-- End Toggle Button Style 1 -->
+                        </div>
+
+                        <p class="contact-form-input-paragraph">Вы соглашаетесь с <a class="contact-form-input-paragraph-a" href="#">политикой конфидециальности</a></p>
+
+                    </div>
+
+                    <button class="contact-form-btn">Отправить</button>
+
+                </div>
+
+                <div class="contact-form-text">
+
+                    <div class="contact-form-text-paragraph">Вы можете написать нам</div>
+
+                    <ul>
+
+                        <li><a class="contact-form-text-a" href="#">Whatsapp</a></li>
+                        <li><a class="contact-form-text-a" href="#">Telegram</a></li>
+                        <li><a class="contact-form-text-a" href="#">VK</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="contact-form-image">
+
+                <img src="/images/src/music.jpg" alt="Contact photo">
+
+            </div>
+
+        </div>
+
+        <div class="contact-text">
+
+            <div class="about-main-text-block">
+
+                <h2 class="about-main-text-title">Контакты</h2>
+
+                <h3 class="about-main-text-subtitle">Мы выполняем свою работу также шедевряльно, как музыка.</h3>
+
+            </div>
+
+            <div class="contact-text-paragraph">
+
+                <p>20 лет работы с клиентами и 99% довольны нашей работой. Наши клиенты получают превосходную работу. Мы продаём вам более, чем дома или недвижимость, мы продаём вам комфорт и спокойствие.</p>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in repudiandae soluta placeat nulla cumque dolor, ut similique ullam possimus. Minima amet consequatur facere ea voluptates debitis atque doloribus dolore. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere amet mollitia id maxime minus consequatur? Repudiandae sunt praesentium quia ducimus deserunt nulla molestiae delectus iure impedit, magni obcaecati natus in.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, aut quasi officiis neque, tempora saepe hic molestiae, asperiores consequatur incidunt reprehenderit. Dicta deleniti placeat expedita quos ducimus laboriosam recusandae eligendi.</p>
+
+            </div>
+
+        </div>
+
+        <div class="contact-bottom">
+
+            <div class="contact-bottom-text">
+
+                <h3 class="contact-bottom-text-title">Недвижимости</h3>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+</section>
+
+<section class="items notch">
+
+    <div class="container">
+
+        <div class="items-wrapper" id="items">
+
+            <div class="card">
+                <div class="cover item-a" style="background-image: url(/images/photo-house-2.webp);">
+                    <h1>Двухкомнатная квартара в центре Москвы</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-b" style="background-image: url(/images/photo-house-3.webp);">
+                    <h1>Tropical<br>Leaf</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-c" style="background-image: url(/images/photo-house-2.webp);">
+                    <h1>Marijuana<br>Chill</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-a" style="background-image: url(/images/photo-house-3.webp);">
+                    <h1>Little<br>Bonsai</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-b" style="background-image: url(/images/photo-house-2.webp);">
+                    <h1>Tropical<br>Leaf</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-c" style="background-image: url(/images/photo-house-3.webp);">
+                    <h1>Marijuana<br>Chill</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-a" style="background-image: url(/images/photo-house-2.webp);">
+                    <h1>Little<br>Bonsai</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-b" style="background-image: url(/images/photo-house-3.webp);">
+                    <h1>Tropical<br>Leaf</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cover item-c" style="background-image: url(/images/photo-house-2.webp);">
+                    <h1>Marijuana<br>Chill</h1>
+                    <span class="price">12000000<span>₽</span></span>
+                    <div class="card-back">
+                        <a href="item.html">Подробнее...</a>
+                        <a href="items.html">Недвижимости</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="items__a">
+
+        <a class="items__text-a" href="items.html">Посмотреть больше...</a>
+
+    </div>
+
+    </div>
+
+</section>
+
+<section class="partners notch">
+
+    <div class="partners-wrapper">
+
+        <div class="map">
+
+            <div id="map"></div>
+
+        </div>
+
+        <div class="partners-block-text">
+
+            <h2 class="partners-title">Банки-партнёры</h2>
+
+            <div class="partners-icons" id="partners">
+
+                <ul>
+
+                    <li><img src="/images/vtb.svg" alt="icon VTB bank"></li>
+                    <li><img src="/images/sovcombank.svg" alt="icon Sovkombank bank"></li>
+                    <li><img src="/images/sberbank.svg" alt="icon Sberbank bank"></li>
+                    <li><img src="/images/kk-bank.svg" alt="icon Kuban bank bank"></li>
+
+                </ul>
+
+            </div>
+
+            <div class="partners-text">
+
+                <div class="partners-text__item partners-text__item-one">Смотрите</div>
+                <div class="partners-text__item partners-text__item-two">В будущее</div>
+                <div class="partners-text__item partners-text__item-three">С нами</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer notch">
+
+    <div class="container">
+
+        <div class="footer-title-image">
+
+            <img class="title-img" src="/images/Title-krepost.svg" alt="Title svg">
+
+        </div>
+
+        <div class="footer-images">
+
+            <div class="footer-image">
+
+                <a href="#header"><img src="/images/footer-photo-one.webp" alt="footer-image-img"></a>
+
+            </div>
+
+            <div class="footer-image">
+
+                <a href="#about"><img src="/images/footer-photo-two.webp" alt="footer-image-img"></a>
+
+            </div>
+
+            <div class="footer-image">
+
+                <a href="#contact"><img src="/images/footer-photo-three.webp" alt="footer-image-img"></a>
+
+            </div>
+
+            <div class="footer-image">
+
+                <a href="#items"><img src="/images/footer-photo-four.webp" alt="footer-image-img"></a>
+
+            </div>
+
+            <div class="footer-image">
+
+                <a href="#partners"><img src="/images/footer-photo-five.webp" alt="footer-image-img"></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <div class="container">
+
+            <p class="footer-map__site">В соответствии с положениями п. 1 ст. 1229 ГК РФ, исключительные права на все материалы, размещенные на сайте https://krepostagenstvo.ru, принадлежат их правообладателям. Использование материалов размещенных на сайте возможно только с письменного согласия правообладателя. Любое неправомерное использование указанных материалов третьими лицами и/или организациями, а именно, копирование, цитирование, размещение на других сайтах без официального разрешения правообладателей влечет за собой ответственность, предусмотренную действующим законодательством РФ о защите исключительных прав.
+            </p> 
+
+        </div>
+    
+          <p class="copyright">&copy;<span id="year"></span> Крепость | Все права защишены </p>
+
+    </div>
+
+</footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+</body>
+</html>
