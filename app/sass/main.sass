@@ -1,0 +1,1224 @@
+@use 'sass:math'
+
+@import reset
+@import vars
+@import fonts
+@import libs
+
+:root
+    --index: calc(1vw + 1vh)
+
+html
+    scroll-behavior: smooth
+
+// html::-webkit-scrollbar 
+//   width: 1rem
+
+
+// html::-webkit-scrollbar-track 
+//   background-color: #EFEFE7
+//   border-radius: 6.25rem
+
+
+// html::-webkit-scrollbar-thumb 
+//   background-color: #1e1e1e
+//   border-radius: 6.25rem
+
+
+body
+    font-family: comfortaa, sans-serif
+    font-weight: 500
+    font-size: 1.25rem
+
+.container
+    max-width: 1400px
+    margin: 0 auto
+    padding: 0 10px
+
+[class*="copyrights-pane"] 
+  display: none !important
+
+
+.loader
+    position: fixed
+    z-index: 9999
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    background-color: #f5f5f5
+    display: flex
+    &__title 
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        z-index: 6
+
+.mobile-nav
+    position: fixed
+    z-index: 9999
+    background-color: #efefe7 
+    // top: -100%
+    left: 0
+    right: 0
+    overflow: hidden
+    color: #1e1e1e
+    .container
+        position: relative
+        width: 100%
+        height: 100%
+    .header-nav-mobile
+        position: absolute
+        right: 1rem
+        top: 2.5rem
+    .logo-bg
+        position: absolute
+        width: 4rem
+        height: 4rem
+        margin-top: 10px
+    .header-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+    .title
+        position: absolute
+        top: 10rem
+    .nav-mobile
+        position: absolute
+        bottom: 1rem
+        left: 1rem
+        ul
+            font-size: 3.5rem
+            line-height: 4.5rem
+            font-family: comforter, sans-serif
+            .header-nav-a
+                color: #1e1e1e
+                text-decoration: none
+    
+.mobile-style
+    top: 0 !important
+    bottom: 0 !important
+
+header
+    .header-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .logo
+        position: fixed
+        z-index: 8
+        width: clamp(5.4rem, 8vw, 6.25rem)
+        height: clamp(5.4rem, 8vw, 6.25rem)
+        top: 0.25rem
+        padding-left: 0.25rem
+        .logo-bg
+            width: 100%
+            height: 100%
+    nav
+        position: fixed
+        right: 2.5rem
+        top: 3.125rem 
+        .header-nav-mobile
+            display: none
+        ul
+            display: flex
+            gap: 1.25rem
+            li
+                a
+                    text-decoration: none
+                    color: $accent-color
+                    transition: color .25s ease
+                    &:hover
+                        color: $accent-text
+
+/* Title */   
+.title
+    position: fixed
+    top: 10.125rem
+    left: 0.25rem
+    right: 0.25rem
+    z-index: -1
+    &-img
+        width: 100%
+        height: auto
+
+/* End Title */
+
+/* About */
+
+.notch
+    webkit-clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+
+.about
+    margin-top: clamp(20rem, 40vw, 30rem)
+    background-color: #efefe7
+    padding-top: 2.5rem
+    &-text 
+        display: flex
+        justify-content: space-between
+    &__text-one  
+        width: 40%
+        border-top: 1px rgba(#000, .5) solid
+        padding-top: 1.25rem
+        &-title  
+            font-size: clamp(.8rem, 3vw, 1.3rem)
+            line-height: clamp( 1.5rem, 6vw, 2.56rem)
+    &__text-two  
+        width: 60%
+        margin-left: 1.87rem
+        border-top: 1px solid rgba(#000, .5)
+        padding-top: 1.25rem
+        &-subtitle
+            font-size: clamp(2rem, 5vw, 4.25rem)
+            line-height: clamp(2.5rem, 6vw, 5.1rem)
+
+.about-images
+    display: flex
+    justify-content: space-between
+    margin-top: 5rem
+    border-bottom: 1px solid rgba(#000, .5)
+    padding-bottom: 1.87rem
+
+.about__images-one
+    width: 40%
+    height: 100%
+    &-img 
+        width: 100%
+        height: 100%
+
+.about__images-two
+    width: 70%
+    height: 100%
+    margin-left: 5.6rem
+    &-img  
+        width: 100%
+        height: 100%
+
+/* End About */
+
+/* Title */   
+
+.text-title
+    font-family: kreadon, sans-serif
+    font-weight: 500
+
+.text__title
+    text-indent: clamp(5rem, 30vw, 33rem)
+    font-size: clamp(2rem, 6vw ,4.18rem)
+    line-height: clamp(3.5rem, 6vw ,7rem)
+    margin-top: 1.25rem
+
+/* End Title */
+
+/* About Main */   
+
+.about-main
+    margin-top: 2.5rem
+    &-image  
+        width: 100%
+        webkit-clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+        clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+        &-img  
+            width: 100%
+            height: 100%
+
+.about-main-text
+    display: flex
+    justify-content: space-between
+    margin-top: 2.81rem
+    &-title
+        font-size: clamp(2rem, 4vw, 3rem)
+        margin-left: clamp(3rem, 4vw ,7.5rem)
+        font-family: kreadon, sans-serif
+        width: 21rem
+    &-subtitle
+        width: auto
+        font-size: clamp(1.2rem, 2vw, 1.6rem)
+        margin-left: clamp(2rem, 4vw ,6.5rem)
+        line-height: 1.8rem
+        padding-right: 1rem
+    &-paragraph
+        width: 24rem
+        font-size: 1.1rem
+        color: $color-paragraph
+        font-family: montserrat, sans-serif
+        line-height: 1.5rem
+        p
+            margin-bottom: 1.25rem
+
+.about-main-text-block
+    display: flex
+    max-width: 60%
+
+.about-bottom
+    margin-top: 9.3rem
+    border-top: 1px solid rgba(#000, .5)
+    padding-top: 1.25rem
+    padding-bottom: 1.25rem
+    &-text-title
+        font-size: clamp(2.5rem, 6vw, 3.75rem)
+        font-family: kreadon, sans-serif
+        margin-left: clamp(5rem, 12vw, 11.25rem)
+
+
+/* End About Main */
+
+/* Contact */   
+
+.contact
+    background-color: #dea856
+    position: relative
+    z-index: 2
+    .container
+        padding-top: clamp(1rem, 6vw, 2.5rem)
+    &-forms 
+        display: flex
+        height: 100%
+    &-form  
+        background-color: #511928
+        width: 50%
+        height: auto
+        padding-left: 3.125rem
+        padding-right: 3.125rem
+        padding-top: 2.8125rem
+        padding-bottom: 4.25rem
+        &-input 
+            width: 100%
+            height: 3.75rem
+            background: #fff
+            outline: none
+            margin-bottom: 2.5rem
+            border: none
+            padding-left: 1.25rem
+            font-size: 1.125rem
+            font-family: comfortaa-light
+    &-form-image 
+        width: 50%
+        margin-left: -1px
+        img
+            width: 100%
+            height: 100%
+
+/* Checkbox */   
+
+.toggler-wrapper 
+  display: block
+  width: 2.8125rem
+  height: 1.5625rem
+  cursor: pointer
+  position: relative
+
+
+.toggler-wrapper input[type="checkbox"] 
+  display: none
+
+
+.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider 
+  background-color: $color-house
+
+
+.toggler-wrapper .toggler-slider 
+  background-color: #fff
+  position: absolute
+  border-radius: 6.25rem
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  -webkit-transition: all 300ms ease
+  transition: all 300ms ease
+
+
+.toggler-wrapper .toggler-knob 
+  position: absolute
+  -webkit-transition: all 300ms ease
+  transition: all 300ms ease
+
+
+/*Style 1*/
+
+.toggler-wrapper.style-1 input[type="checkbox"]:checked+.toggler-slider .toggler-knob 
+  left: calc(100% - 19px - 3px)
+
+
+.toggler-wrapper.style-1 .toggler-knob 
+  width: calc(1.5625rem - 6px)
+  height: calc(1.5625rem - 6px)
+  border-radius: 50%
+  left: 3px
+  top: 3px
+  background-color: #ccc
+
+/* End checkbox */
+
+.contact-form-input-paragraph
+    font-size: 1.125rem
+    color: #fff
+    margin-left: 1.25rem
+
+.contact-form-if
+    display: flex
+    align-items: center
+
+.contact-form-if-text 
+    display: flex
+    align-items: center
+
+.contact-form-input-paragraph-a
+    color: #fff
+
+.contact-form-btn
+    font-family: kreadon, sans-serif
+    padding: 0.9375rem 1.875rem
+    font-size: 1.125rem
+    background: $color-house
+    font-weight: 500
+    border: none
+    cursor: pointer
+
+.contact-form-text
+    color: #fff
+    font-family: comfortaa-light, sans-serif
+    font-size: 1.125rem
+    margin-top: 1.25rem
+    &-paragraph 
+        margin-bottom: 0.55rem
+    ul
+        li
+            margin-bottom: 0.55rem
+    &-a  
+        color: #fff
+
+.contact-text
+    display: flex
+    color: #fff
+    justify-content: space-between
+    margin-top: 2.5rem
+    &-wrapper 
+        width: 60%
+    &-subtitle 
+        width: 50%
+        font-size: clamp(1.2rem, 2vw, 1.6rem)
+        line-height: 1.875rem
+        // padding-right: 5rem
+    &-paragraph
+        width: 24rem
+        font-size: 1.0625rem
+        font-family: montserrat, sans-serif
+        line-height: 1.5rem
+        p
+            margin-bottom: 1.25rem
+
+.contact-bottom
+    position: relative
+    margin-top: 13.125rem
+    border-top: 1px solid rgba(#fff, .5)
+    padding-top: 1.25rem
+    padding-bottom: 1.25rem
+    &-text-title
+        font-size: clamp(2.5rem, 6vw, 3.75rem)
+        font-family: kreadon, sans-serif
+        margin-left: clamp(5rem, 12vw, 11.25rem)
+        color: #fff
+
+/* End Contact */
+
+/* Items */   
+
+.items
+    background-color: #631e30
+    font-family: kreadon-light, sans-serif
+    padding-bottom: 2.5rem
+    padding-top: 6.25rem
+    webkit-clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    padding-left: 5.5625rem
+    position: relative
+    overflow-x: hidden
+    .items-item 
+        gap: 0
+        padding: 0
+        margin: 0
+    .container
+        width: 300vw
+    .items-wrapper
+        display: flex
+        gap: 5.25rem
+        z-index: 3
+        align-items: center
+		
+.card
+    position: relative
+    height: 500px
+    min-width: 500px
+    margin: 10px 0
+    perspective: 1200px
+    transition: all ease .15s
+    &:hover
+        .cover
+            transform: rotateX(0deg) rotateY(-180deg)
+            &:before
+                transform: translateZ(30px)
+            
+            &:after
+                background-color: black
+            
+            h1
+                transform: translateZ(100px)
+            
+            .price
+                transform: translateZ(60px)
+            
+            a
+                transform: translateZ(-60px) rotatey(-180deg)
+			
+		
+	
+	
+    .cover
+        position: absolute
+        height: 100%
+        width: 100%
+        transform-style: preserve-3d
+        transition: ease all $transition-time
+        background-size: cover
+        background-position: center center
+        background-repeat: no-repeat
+        &:before
+            content: ''
+            position: absolute
+            border: 5px solid rgba(255,255,255,.5)
+            box-shadow: 0 0 12px rgba(0,0,0,.3) 
+            top:20px
+            left:20px
+            right:20px
+            bottom:20px
+            z-index: 2
+            transition: ease all $transition-time
+            transform-style: preserve-3d
+            transform: translateZ(0px)
+		
+        &:after
+            content: ''
+            position: absolute
+            top:0px
+            left:0px
+            right:0px
+            bottom:0px
+            z-index: 2
+            transition: ease all 1.3s
+            background: rgba(0,0,0,.2)
+		
+        h1
+            font-weight: 600
+            position: absolute
+            bottom: 55px
+            left: 50px
+            right: 35px
+            color: white
+            transform-style: preserve-3d
+            transition: ease all $transition-time
+            z-index:3
+            font-size: clamp(1rem, 6vw, 1.8rem)
+            transform: translateZ(0px)
+		
+        .price
+            font-weight: 200
+            position: absolute
+            top: 55px
+            right: 50px
+            color: white
+            transform-style: preserve-3d
+            transition: ease all $transition-time
+            z-index:4
+            font-size: clamp(1.5rem, 4vw, 2.6rem)
+            transform: translateZ(0px)
+		
+	
+    .card-back
+        position: absolute
+        height: 100%
+        width: 100%
+        background: #0b0f08
+        transform-style: preserve-3d
+        transition: ease all $transition-time
+        transform: translateZ(-1px)
+        display: flex
+        align-items: center
+        justify-content: center
+        a
+            transform-style: preserve-3d
+            transition: ease transform $transition-time, ease background .5s
+            transform: translateZ(-1px) rotatey(-180deg)
+            background: transparent
+            border: 1px solid white
+            font-weight: 200
+            font-size: 1.3em
+            color: white
+            padding: 14px 32px
+            outline: none
+            text-decoration: none
+            &:hover
+                background-color: white
+                color: #0b0f08
+			
+.items__a
+    text-align: center
+    margin-left: -5%
+    font-size: 1.5rem
+    margin-top: 2rem
+    a
+        color: rgba(#fff, .8)
+
+.body-items .items__item-text-additionally
+    display: flex
+    flex-wrap: wrap
+    p, span
+        font-size: 1.2rem
+
+/* Before */   
+
+.before
+    width: 23.125rem
+    height: 23.125rem
+    position: absolute
+    left: 1.25rem
+    top: 18.75rem
+    img
+        width: 100%
+        height: 100%
+
+/* End Before */
+
+/* End Items */
+
+/* Partners */
+
+.partners
+    webkit-clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    max-width: 1520px
+    margin: 0 auto
+    height: clamp(50rem, 6vw, 70rem)
+
+.map
+    width: 50%
+    height: 100%
+
+.partners-wrapper
+    display: flex
+
+.partners-block-text
+    width: 50%
+    background-color: #C72A00
+    color: $color-house
+    padding: 2.5rem
+
+.partners-title
+    font-size: 2.5rem
+    margin-bottom: 2.5rem
+
+.partners-icons
+    ul
+        display: flex
+        flex-wrap: wrap
+        gap: 2.1875rem clamp(1rem, 6vw, 2.1rem)
+
+.partners-text
+    font-family: comforter, sans-serif
+    font-size: clamp(3.5rem, 6vw, 4.375rem)
+    margin-top: 2.5rem
+    &__item-one 
+        margin-left: 5rem
+        margin-bottom: clamp(2.5rem, 6vw, 4.375rem)
+    &__item-two 
+        text-align: end
+        margin-right: clamp(1rem, 6vw, 2.5rem)
+    &__item-three 
+        margin-left: 1.875rem
+        margin-top: clamp(2rem, 6vw, 3.75rem)
+
+/* End partners */
+
+/* Footer */   
+
+.footer
+    margin-top: -5rem
+    background-color: #fff
+    padding-top: 2.5rem
+    webkit-clip-path: polygon(0 2.4rem,2.4rem 0,calc(100% - 2.4rem) 0,100% 2.4rem,100% calc(100% - 2.4rem),calc(100% - 0rem) 100%,0rem 100%,0 calc(100% - 2.4rem),0 2.4rem)
+    clip-path: polygon(0 2.4rem,2.4rem 0,calc(100% - 2.4rem) 0,100% 2.4rem,100% calc(100% - 2.4rem),calc(100% - 0rem) 100%,0rem 100%,0 calc(100% - 2.4rem),0 2.4rem) 
+    &-title-image 
+        border-top: 1px solid rgba(#000, .5)
+        padding-top: 1.875rem
+
+.footer-images
+    display: grid
+    grid-template-columns: repeat(auto-fit, 200px)
+    // grid-template-rows: repeat(3, 1fr)
+    justify-content: center
+    gap: 2rem
+    margin-top: 5rem
+
+.footer-image
+    width: 12.5rem
+    height: 12.5rem
+    align-self: center
+    justify-self: center
+    cursor: pointer
+    img
+        width: 100%
+        height: 100%
+
+.copyright
+    color: rgba(#000, .3)
+    font-size: 1rem
+    text-align: center
+    padding-top: 1.125rem
+    padding-bottom: 0.25rem
+
+.footer-map__site
+    color: rgba(#000, .3)
+    font-size: 1rem
+    line-height: 1.4rem
+    margin-top: 3rem
+/* End Footer */
+
+/* Items-Main */
+
+.body-items
+    color: #fff
+    background-color: #511928
+    .items__item-text-additionally
+        color: rgba(#fff, .6)
+        gap: 0rem 1rem
+        justify-content: center
+        div
+            text-align: center
+    .copyright, .footer-map__site
+        color: rgba(#fff, .6)
+
+
+
+.items-title
+    font-family: comfortaa, sans-serif
+    margin-top: clamp(6rem, 10vw, 8.875rem)
+    border-top: 1px solid rgba(#fff, .5)
+    padding-top: 3.125rem
+    padding-bottom: clamp(3rem, 10vw, 5.125rem )
+    h1
+        font-size: clamp(3.5rem, 8vw, 7.25rem)
+
+.items-main-wrapper
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 2.5rem
+    margin-top: 2.5rem
+
+.items-main-item
+    border-top: 1px solid rgba(#fff, .5)
+    padding-top: 2.5rem
+    font-family: kreadon, sans-serif
+    cursor: pointer
+    transition: filter .25s ease-out
+    h2
+        font-size: clamp(2rem, 4vw, 2.875rem)
+        text-indent: calc(var(--index) * 10)
+    p
+        padding-top: 1.25rem
+        font-size: clamp(1rem, 3vw, 1.375rem)
+        line-height: 1.75rem
+        color: rgba(#fff, .6)
+    &-image 
+        width: 100%
+        height: 28.125rem
+        margin-top: 1.25rem
+        webkit-clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+        clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+        img
+            width: 100%
+            height: 100%
+    &:hover
+        filter: blur(2px)
+
+.more
+    text-align: center
+    margin-top: 2.125rem
+    font-size: 1.5rem
+    margin-bottom: 2.125rem
+.more-a
+    color: rgba(#fff, .7)
+
+.footer-items
+    display: flex
+    justify-content: space-between
+    font-family: montserrat, sans-serif
+
+.footer-text
+    display: flex
+    justify-content: space-between
+    color: rgba(#fff, .6)
+    font-size: 1rem
+    gap: clamp(3rem, 8vw, 6.25rem)
+    line-height: 1.625rem
+    margin-left: clamp(6rem, 6vw, 12.5rem)
+    margin-right: clamp(2rem, 6vw, 6.25rem)
+    a
+        color: rgba(#fff, .6)
+
+.footer-text__messages-title
+    margin-bottom: 0.25rem
+
+.footer-logo
+    min-width: 6.25rem
+    height: 6.25rem
+    img
+        width: 100%
+        height: 100%
+
+.header-title
+    text-align: end
+    padding-top: clamp(2.5rem, 3vw, 3.75rem)
+    font-size: clamp(.7rem, 3vw, 1.5rem)
+    a
+        color: #fff
+        text-decoration: none
+        transition: color .25s ease-out
+        &:hover
+            color: $color-paragraph
+
+.items-main-item-a
+    color: #fff
+    text-decoration: none
+
+
+/* Item */   
+
+.body-item
+    background-color: #511928
+    color: #fff
+    .contact-form
+        width: 100%
+    .contact-form-input-paragraph
+        margin-right: 1.25rem
+    .copyright, .footer-map__site
+        color: rgba(#fff, .6)
+
+.item
+    margin-top: 8.5rem
+    border-top: 1px solid rgba(#fff, .5)
+    padding-top: 3.125rem
+
+.item-title
+    font-size: clamp(2rem, 6vw, 3.53rem)
+    line-height: clamp(3.5rem, 6vw, 4.25rem)
+
+.item-image
+    width: 100%
+    height: calc(var(--index) * 33)
+    margin-top: 3.75rem
+    webkit-clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    clip-path: polygon(0 2.4rem, 2.4rem 0, calc(100% - 2.4rem) 0, 100% 2.4rem, 100% calc(100% - 2.4rem), calc(100% - 2.4rem) 100%, 2.4rem 100%, 0 calc(100% - 2.4rem), 0 2.4rem)
+    img
+        width: 100%
+        height: 100%
+
+.item-text
+    display: flex
+    justify-content: space-between
+    margin-top: 2.5rem
+
+.item-text-paragraph
+    width: 25.25rem
+    font-size: 1.0625rem
+    font-family: montserrat, sans-serif
+    line-height: 1.5rem
+    color: rgba(#fff, .8)
+    margin-left: 2rem
+    p
+        margin-bottom: 1.25rem
+
+.item-text-additionally
+    border: 2px solid rgba(#fff, .5)
+    display: flex
+    justify-content: space-between
+    padding: 1.25rem
+    font-size: 1.4375rem
+    gap: 1.25rem
+
+.item-text-additionally__more
+    display: flex
+    flex-direction: column
+    line-height: 2rem
+    border: 2px solid rgba(#fff, .5)
+    margin-top: 1.25rem
+    font-size: clamp(1.2rem, 4vw, 1.5rem)
+    div
+        padding: 1.25rem
+        border-bottom: 2px solid rgba(#fff, .5)
+        &:last-child
+            border: none
+
+.swiper 
+  width: 100%
+  height: 100%
+
+.swiper-pagination-bullet
+    border-radius: 0
+    width: 1.875rem
+    height: 5px
+
+.swiper-pagination-bullet-active
+    background: #fff
+
+.swiper-button-next, .swiper-button-prev
+    color: #fff
+
+/* End Footer-items */
+
+/* Media */    
+
+@media (max-width: 1200px) 
+    .items
+        padding-left: 0
+        .container
+            width: auto
+    .items .items-wrapper
+        gap: 1rem
+        display: grid
+        grid-template-columns: repeat(2, 400px)
+        justify-content: space-evenly
+        margin-bottom: 1rem       
+    .card
+        min-width: 400px
+        height: 400px
+    .card-back
+        flex-direction: column
+        gap: 2rem
+
+@media (max-width: 1140px) 
+    .contact-form-btn
+        margin-left: auto
+    .about-main-text-subtitle
+        margin-left: 0
+    .contact-text-subtitle
+        margin-left: 10%
+
+@media (max-width: 1120px) 
+    .contact-forms
+        display: flex
+        flex-direction: column-reverse
+    .contact-form-image
+        width: 100%
+        height: calc(var(--index) * 32)
+    .contact-form
+        width: 100%
+        margin-top: -1px
+    .contact-form-image
+        margin-left: 0
+    .contact-form-btn
+        margin-left: 30%
+    // .footer-images
+    //     grid-template-columns: repeat(4, 1fr)
+    // .footer-image
+    //     margin-bottom: 1.5rem
+
+@media (max-width: 1080px) 
+    .items-main-item-image
+        height: 400px
+
+@media (max-width: 960px) 
+    .items-main-wrapper
+        grid-template-columns: repeat(1, 1fr)
+    .items-main-item
+        width: 90%
+        margin: 0 auto
+    .footer-text
+        flex-wrap: wrap
+        gap: clamp(1rem, 6vw, 2.25rem)
+    .footer-items
+        align-items: center
+    .item-text
+        display: flex
+        flex-direction: column-reverse
+    .item-text-additionally
+        flex-wrap: wrap
+        justify-content: center
+    .item-text-paragraph
+        width: auto
+        margin-left: 0
+
+    .about-main-text
+        display: block
+
+    .about-main-text-block
+        display: flex
+        justify-content: space-between
+        max-width: 100%
+
+    .about-main-text-paragraph
+        width: 80%
+        margin: 0 auto
+        margin-top: 2rem
+
+    .contact-text
+        display: block
+
+    .contact-text-wrapper
+        width: 100%
+    .contact-text-subtitle
+        width: 100%
+
+    .contact-text-paragraph
+        width: 80%
+        margin: 0 auto
+        margin-top: 2rem
+
+    .about__text
+        &-one 
+            width: 50%
+        &-two 
+            width: 50%
+        
+
+    .partners
+        height: auto
+    .partners-wrapper
+        display: block
+    .partners-block-text
+        width: 100%
+    .map
+        width: 100%
+
+    .notch
+        webkit-clip-path: polygon(0 1.6rem, 1.6rem 0, calc(100% - 1.6rem) 0, 100% 1.6rem, 100% calc(100% - 1.6rem), calc(100% - 1.6rem) 100%, 1.6rem 100%, 0 calc(100% - 1.6rem), 0 1.6rem)
+        clip-path: polygon(0 1.6rem, 1.6rem 0, calc(100% - 1.6rem) 0, 100% 1.6rem, 100% calc(100% - 1.6rem), calc(100% - 1.6rem) 100%, 1.6rem 100%, 0 calc(100% - 1.6rem), 0 1.6rem)
+
+@media (max-width: 900px) 
+    .items .items-wrapper
+        grid-template-columns: repeat(1, 100%)
+        justify-content: start
+        padding: 0px 20px
+
+    .card
+        min-width: 100%
+        height: 700px
+
+@media (max-width: 830px) 
+    .item-image
+        height: calc(var(--index) * 25)
+
+    .about-images
+        display: flex
+        flex-direction: column-reverse
+        margin-top: 2rem
+    .about__images-two
+        width: 100%
+        margin-left: 0
+    .about__images-one
+        width: 60%
+        margin: 0 auto
+        margin-top: 2rem
+    .about-text
+        flex-direction: column-reverse
+    .about__text-one
+        width: 90%
+        margin: 0 auto
+        border-top: none
+    .about__text-two
+        width: 90%
+
+    .partners-text__item-one
+        margin-left: 0
+    .partners-text__item-two
+        margin-right: 0
+    .copyright
+        font-size: .7rem
+
+@media (max-width: 732px) 
+    .footer-items
+        display: block
+        position: relative
+    .footer-logo
+        width: 6.25rem
+        position: absolute
+        bottom: 0
+        right: 20px
+    .footer-text
+        margin-left: 10px
+        margin-right: 10px
+        margin-top: 0
+
+    header nav ul li
+        display: none
+
+    header nav .header-nav-mobile
+        display: block
+        font-size: 1rem
+
+    header nav
+        top: 2.5rem
+        right: 1rem
+    
+    .items
+        padding-top: 3rem
+
+    .card
+        height: 600px
+
+@media (max-width: 680px) 
+    .contact
+        .contact-form
+            padding-right: 20px
+            padding-left: 20px
+    .contact-form-if
+        display: flex
+        flex-direction: column-reverse
+    .contact-form-if-text
+        width: auto
+    .contact-form-btn
+        width: 100%
+        margin-bottom: 2.5rem
+    .contact-form-input
+        margin-bottom: 2rem
+    .contact-form
+        padding-left: 0
+        padding-right: 0
+
+@media (max-width: 652px) 
+    .items__item-image
+        width: 100%
+        height: 400px
+    .items__item-text
+        width: 100%
+    .items-wrapper
+        grid-template-columns: repeat(auto-fit, 70%)
+
+    .card
+        height: 500px
+
+
+@media (max-width: 630px) 
+    .item
+        padding-top: 2rem
+    .items-main-item
+        width: 100%
+    .item-image
+        margin-top: 2rem
+    .item-text-additionally
+        font-size: 1.2rem
+    .about-main-text-block
+        display: block
+    .about-main-text-subtitle
+        margin-left: 3rem
+
+@media ( max-width: 530px )
+    .swiper-button-next:after, .swiper-button-prev:after
+        font-size: 2rem
+    .swiper-pagination-bullet
+        width: 1.5rem
+    .items__item-text-additionally
+        flex-wrap: wrap
+    .items-title
+        h1
+            font-size: clamp(1.5rem,10vw,4.25rem)
+    header
+        .logo
+            width: 4.8rem
+            height: 4.8rem
+
+    .items-wrapper
+        grid-template-columns: repeat(auto-fit, 90%)
+
+    .about-main-text-title
+        margin-left: 0px
+        font-size: 2rem
+    .about-main-text-subtitle
+        margin-left: 0px
+        margin-top: 10px
+        margin-bottom: 3rem
+    .about-main-text-paragraph
+        margin: 0px
+        width: 100%
+    .contact-text-paragraph
+        width: 100%
+        margin: 0px
+
+    .title
+        top: 8rem
+    .about
+        margin-top: 15rem
+    .text__title
+        text-indent: 0
+
+    .items
+        margin-top: -10%
+
+    .card
+        height: 400px
+
+@media ( max-width: 480px )
+    .items-main-item h2
+        text-indent: 0
+        font-size: 1.8rem
+    .items-main-item-image
+        height: 300px
+    .about__text-two
+        margin-left: 0px
+        width: 100%
+    .about__text-one
+        width: 100%
+        margin-left: 0
+    .contact-bottom-text-title
+        text-align: center
+        justify-content: center
+        margin-left: 0
+    .partners-title
+        font-size: 1.8rem
+    .partners-block-text
+        padding: 10px
+        padding-top: 30px
+        padding-bottom: 30px
+
+    .contact-form-input
+        height: 3.4rem
+
+    .about-bottom
+        display: none
+    .about
+        padding-bottom: 2rem
+    .contact-bottom
+        display: none
+    .contact
+        padding-bottom: 2rem
+
+    .contact-form-input-paragraph
+        font-size: 1rem
+
+    .footer-map__site
+        font-size: 0.7rem
+        line-height: 1rem
+
+@media ( max-width: 430px )
+    .text__title
+        line-height: 2.6rem
+
+    .contact-form-image
+        height: calc(var(--index)*28)
+    
+    .items
+        margin-top: -30%
+
+    .card
+        height: 300px
+
+@media (max-width: 360px) 
+    .footer-logo
+        width: 5rem
+        height: 5rem
+        min-width: auto
+        top: 0
+    .about__text-two
+        margin-left: 10px
